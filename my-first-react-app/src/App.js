@@ -64,7 +64,6 @@ function App() {
     }
     fetchData();
   }, []);
-  
 
   function handleCountryDetails(country) {
     setSelectedCountry(country);
@@ -75,13 +74,15 @@ function App() {
   };
   const asc = () => {
     let sorted = [...data].sort((a, b) =>
-      a.name.common > b.name.common ? 1 : -1)
-      setData(sorted)
+      a.name.common > b.name.common ? 1 : -1
+    );
+    setData(sorted);
   };
   const desc = () => {
     let desSorted = [...data].sort((a, b) =>
-      b.name.common > a.name.common ? 1 : -1)
-      setData(desSorted)
+      b.name.common > a.name.common ? 1 : -1
+    );
+    setData(desSorted);
   };
 
   return (
@@ -91,7 +92,8 @@ function App() {
       ) : (
         <div>
           <button onClick={asc}>Asc Sort</button>
-          <button onClick={desc}>Desc Sort</button><br></br>
+          <button onClick={desc}>Desc Sort</button>
+          <br></br>
           <Countries countries={data} onLearn={handleCountryDetails} />
         </div>
       )}
